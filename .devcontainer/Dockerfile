@@ -1,3 +1,3 @@
-FROM mcr.microsoft.com/devcontainers/base:alpine
+FROM mcr.microsoft.com/devcontainers/base:debian
 
-RUN apk update && apk add neovim openssh
+RUN apt update && apt install neovim
