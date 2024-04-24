@@ -37,3 +37,12 @@
   }
 }
 ```
+
+## refs:
+
+- Doesn't seem updated
+  - [](https://notes.alexkehayias.com/running-docker-compose-in-codespaces/)
+  - [](https://notes.alexkehayias.com/github-codespaces-is-too-slow-and-expensive-to-replace-local-development/)
+- []()
+- []()
+- []()
