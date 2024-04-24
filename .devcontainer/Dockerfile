@@ -44,14 +44,14 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
 # Clean up apt
 RUN apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
-USER vscode
+# USER vscode
 
 # Create a directory for the LunarVim configuration
-RUN mkdir -p "${HOME}/.local/bin"
-ENV PATH="${PATH}:${HOME}/.local/bin"
+# RUN mkdir -p "${HOME}/.local/bin"
+# ENV PATH="${PATH}:${HOME}/.local/bin"
 
 # Install neovim
-RUN bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/rolling/utils/installer/install-neovim-from-release)
+# RUN bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/rolling/utils/installer/install-neovim-from-release)
 # RUN INSTALL_PREFIX="/usr/local" bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/rolling/utils/installer/install-neovim-from-release)
 
 # Install LunarVim 
