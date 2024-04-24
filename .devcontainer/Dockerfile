@@ -22,6 +22,8 @@
 # FROM debian:bookworm
 FROM mcr.microsoft.com/devcontainers/base:debian
 
+ENV PATH="${PATH}:${HOME}/.local/bin"
+
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
   apt-get -y install --no-install-recommends \
   ripgrep \
@@ -48,6 +50,7 @@ USER vscode
 RUN bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/rolling/utils/installer/install-neovim-from-release)
 
 # Install LunarVim 
+# RUN INSTALL_PREFIX="/usr/local" LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) --no-install-dependencies -y
 RUN LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) --no-install-dependencies -y
 
 # RUN LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.2/neovim-0.8/utils/installer/install.sh) --no-install-dependencies -y
