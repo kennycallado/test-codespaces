@@ -36,5 +36,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     # python3-pip \
     # cargo \
 
-# Install LunarVim
-RUN LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) --no-install-dependencies -y
+# Install LunarVim 
+# RUN LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) --no-install-dependencies -y
+RUN LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.2/neovim-0.8/utils/installer/install.sh) --no-install-dependencies -y
+
