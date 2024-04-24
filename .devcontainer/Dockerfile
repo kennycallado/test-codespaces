@@ -20,14 +20,15 @@ FROM mcr.microsoft.com/devcontainers/base:debian
 #     neovim
 
 # Same as above but for debian
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends \
-    neovim \
-    git \
-    curl \
-    jq \
-    make \
-    ripgrep
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
+  apt-get -y install --no-install-recommends \
+  git \
+  curl \
+  jq \
+  neovim
+
+    # make \
+    # ripgrep
 
     # gcc \ ??
     # nodejs \
@@ -38,5 +39,4 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 
 # Install LunarVim 
 # RUN LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) --no-install-dependencies -y
-RUN LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.2/neovim-0.8/utils/installer/install.sh) --no-install-dependencies -y
-
+# RUN LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.2/neovim-0.8/utils/installer/install.sh) --no-install-dependencies -y
