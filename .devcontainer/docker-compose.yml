@@ -6,6 +6,15 @@ services:
     network_mode: service:db
     command: sleep infinity
 
+  app:
+    image: kennycallado/q-app-php:latest
+    environment:
+      ENVIRONMENT: development
+      DATABASE_URL: http://db/sql
+      AUTH_URL: http://auth:9000/auth
+    volumes:
+      - .:/var/www/html
+
   db:
     image: kennycallado/q-api-store-demo:latest
     command:

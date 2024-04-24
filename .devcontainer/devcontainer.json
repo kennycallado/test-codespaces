@@ -3,6 +3,12 @@
   "dockerComposeFile": "docker-compose.yml",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "postCreateCommand": ".devcontainer/post-create.sh",
+  "forwardPorts": ["app:80", "db:8000", "auth:9000"],
+  "portsAttributes": {
+    "8000": { "label": "database" },
+    "9000": { "label": "auth" },
+    "80": { "label": "app" }
+  },
   "features": {
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
         "installDockerBuildx": false
