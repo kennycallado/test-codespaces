@@ -5,6 +5,7 @@
   "service": "devcontainer",
   "dockerComposeFile": "docker-compose.yml",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "postCreateCommand": "./post-create.sh",
   "forwardPorts": [8000],
   "features": {
     "ghcr.io/devcontainers/features/php:1": {},
