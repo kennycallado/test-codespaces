@@ -7,3 +7,16 @@ services:
       - ../..:/workspaces:cached
     network_mode: service:db
     command: sleep infinity
+
+  db:
+    image: kennycallado/q-api-store-demo:latest
+    restart: unless-stopped
+    command: 
+      - start
+      - memory
+      - -A
+      - --auth
+      - --no-banner
+      - --user=root
+      - --pass=root
+      - --bind=0.0.0.0:8000
