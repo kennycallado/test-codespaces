@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-set -e
+# set -e
 
 mkdir -p "${HOME}/.local/bin"
 PATH="${PATH}:${HOME}/.local/bin"

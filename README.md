@@ -2,9 +2,10 @@
 
 ``` json
 {
-  "dockerComposeFile": "docker-compose.yml",
   "service": "devcontainer",
+  "dockerComposeFile": "docker-compose.yml",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "forwardPorts": [8000],
   "features": {
     "ghcr.io/devcontainers/features/php:1": {},
     "ghcr.io/devcontainers/features/sshd:1": {},
