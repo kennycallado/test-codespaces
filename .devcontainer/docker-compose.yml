@@ -11,8 +11,6 @@ services:
   db:
     image: surrealdb/surrealdb:v1.4.2
     restart: unless-stopped
-    links:
-        - super
     command: 
       - start
       - memory
@@ -29,7 +27,5 @@ services:
     container_name: super
     image: kennycallado/q-api-super:latest
     pull_policy: "always"
-    links:
-        - db
     environment:
       DB_HOST: db:8000
