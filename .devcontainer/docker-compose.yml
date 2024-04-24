@@ -36,8 +36,6 @@ services:
     image: kennycallado/q-api-auth:latest
     pull_policy: "always"
     network_mode: service:db
-    ports:
-      - 9000:9000
     environment:
       ROCKET_PORT: 9000
       ROCKET_DATABASES: '{store={host="localhost", port=8000, username="root", password="root"}}'
