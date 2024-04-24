@@ -3,11 +3,9 @@
   "dockerComposeFile": "docker-compose.yml",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "postCreateCommand": ".devcontainer/post-create.sh",
-  "forwardPorts": [8000, 8080, 9000],
+  "forwardPorts": [8000],
   "portsAttributes": {
     "8000": { "visibility": "public" },
-    "8080": { "visibility": "public" },
-    "9000": { "visibility": "public" }
   },
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {},
