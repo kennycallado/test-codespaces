@@ -27,7 +27,6 @@ services:
     image: kennycallado/q-api-super:latest
     restart: unless-stopped
     pull_policy: "always"
-    depends_on:
-      db
+    network_mode: service:db
     environment:
-      DB_HOST: db:8000
+      DB_HOST: localhost:8000
