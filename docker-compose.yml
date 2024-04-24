@@ -2,7 +2,6 @@ version: "3.8"
 
 services:
   db:
-    container_name: surrealdb
     image: surrealdb/surrealdb:v1.4.2
     restart: unless-stopped
     command: 
@@ -21,4 +20,4 @@ services:
     image: kennycallado/q-api-super:latest
     pull_policy: "always"
     environment:
-      DB_HOST: 'surrealdb:8000'
+      DB_HOST: 'localhost:8000'
