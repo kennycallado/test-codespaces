@@ -17,12 +17,14 @@ services:
 
   super:
     image: kennycallado/q-api-super:latest
+    restart: unless-stopped
     network_mode: service:db
     environment:
       DB_HOST: 'localhost:8000'
 
   auth:
     image: kennycallado/q-api-auth:latest
+    restart: unless-stopped
     network_mode: service:db
     environment:
       ROCKET_PORT: 9000
