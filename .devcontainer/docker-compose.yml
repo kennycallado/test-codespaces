@@ -16,8 +16,6 @@ services:
       ENVIRONMENT: development
       DATABASE_URL: http://db/sql
       AUTH_URL: http://auth:9000/auth
-    volumes:
-      - ..:/var/www/html
 
   db:
     image: kennycallado/q-api-store-demo:latest
