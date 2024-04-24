@@ -8,17 +8,17 @@ services:
     network_mode: service:db
     command: sleep infinity
 
-  db:
-    image: surrealdb/surrealdb:v1.4.2
-    restart: unless-stopped
-    command: 
-      - start
-      - memory
-      - -A
-      - --auth
-      - --no-banner
-      # - --log=trace
-      # - --log=info
-      - --user=root
-      - --pass=root
-      - --bind=0.0.0.0:8000
+  # db:
+  #   image: surrealdb/surrealdb:v1.4.2
+  #   restart: unless-stopped
+  #   command: 
+  #     - start
+  #     - memory
+  #     - -A
+  #     - --auth
+  #     - --no-banner
+  #     # - --log=trace
+  #     # - --log=info
+  #     - --user=root
+  #     - --pass=root
+  #     - --bind=0.0.0.0:8000
