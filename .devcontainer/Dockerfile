@@ -21,10 +21,10 @@
 # FROM debian:bookworm
 FROM mcr.microsoft.com/devcontainers/base:debian
 
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
-  apt-get -y install --no-install-recommends \
-  ripgrep \
-  jq
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
+#   apt-get -y install --no-install-recommends \
+#   ripgrep \
+#   jq
 
   # ca-certificates \
   # git \
@@ -38,7 +38,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
 #  gcc \
 
 # Clean up apt
-RUN apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+# RUN apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 # Install neovim
 RUN INSTALL_PREFIX="/usr/local" bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/rolling/utils/installer/install-neovim-from-release)
