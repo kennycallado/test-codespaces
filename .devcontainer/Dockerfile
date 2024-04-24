@@ -1,13 +1,13 @@
-FROM mcr.microsoft.com/devcontainers/base:alpine
+# FROM mcr.microsoft.com/devcontainers/base:alpine
 
 # Install neovim
-RUN apk add --no-cache neovim
+# RUN apk add --no-cache neovim
 
 # # Install next dependencies
-RUN apk add --no-cache \
-  bash \
-  ripgrep \
-  jq
+# RUN apk add --no-cache \
+#   bash \
+#   ripgrep \
+#   jq
 
 #     openssh \
 #     git \
@@ -23,12 +23,12 @@ RUN apk add --no-cache \
 #     neovim
 
 # FROM debian:bookworm
-# FROM mcr.microsoft.com/devcontainers/base:debian
+FROM mcr.microsoft.com/devcontainers/base:debian
 
-# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
-#   apt-get -y install --no-install-recommends \
-#   ripgrep \
-#   jq
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
+  apt-get -y install --no-install-recommends \
+  ripgrep \
+  jq
 
   # ca-certificates \
   # git \
@@ -42,7 +42,7 @@ RUN apk add --no-cache \
 #  gcc \
 
 # Clean up apt
-# RUN apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+RUN apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 USER vscode
 
