@@ -5,6 +5,7 @@
 
 # # Install next dependencies
 # RUN apk add --no-cache \
+#     bash \
 #     openssh \
 #     git \
 #     curl \
@@ -38,15 +39,18 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
 #  gcc \
 
 # Clean up apt
-# RUN apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+RUN apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+
+USER vscode
 
 # Install neovim
 # RUN INSTALL_PREFIX="/usr/local" bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/rolling/utils/installer/install-neovim-from-release)
+RUN bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/rolling/utils/installer/install-neovim-from-release)
 
 # Install LunarVim 
-# RUN INSTALL_PREFIX="/usr/local" LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) --no-install-dependencies -y
+RUN LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) --no-install-dependencies -y
 
 # RUN LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.2/neovim-0.8/utils/installer/install.sh) --no-install-dependencies -y
 
 # Update PATH
-# ENV PATH="${PATH}:${HOME}/.local/bin"
+ENV PATH="${PATH}:${HOME}/.local/bin"
