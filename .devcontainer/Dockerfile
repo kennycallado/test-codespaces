@@ -22,8 +22,6 @@
 # FROM debian:bookworm
 FROM mcr.microsoft.com/devcontainers/base:debian
 
-ENV PATH="${PATH}:${HOME}/.local/bin"
-
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
   apt-get -y install --no-install-recommends \
   ripgrep \
