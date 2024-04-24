@@ -6,10 +6,10 @@
   "service": "devcontainer",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "features": {
-    "ghcr.io/devcontainers/features/sshd:1": {},
     "ghcr.io/devcontainers/features/php:1": {},
+    "ghcr.io/devcontainers/features/sshd:1": {},
+    "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers/features/python:1": {}
-    "ghcr.io/devcontainers/features/node:1": {}
   }
 }
 ```
