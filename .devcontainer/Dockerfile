@@ -1,5 +1,4 @@
 # FROM mcr.microsoft.com/devcontainers/base:alpine
-FROM mcr.microsoft.com/devcontainers/base:debian
 
 # Install neovim
 # RUN apk add --no-cache neovim
@@ -19,24 +18,33 @@ FROM mcr.microsoft.com/devcontainers/base:debian
 #     ripgrep \
 #     neovim
 
-# Same as above but for debian
+# FROM debian:bookworm
+FROM mcr.microsoft.com/devcontainers/base:debian
+
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
   apt-get -y install --no-install-recommends \
+  ca-certificates \
   git \
   curl \
-  jq \
-  neovim
+  make \
+  gcc \
+  ripgrep \
+  jq
 
-    # make \
-    # ripgrep
+#  git \
+#  curl \
+#  make \
+#  gcc \
 
-    # gcc \ ??
-    # nodejs \
-    # npm \
-    # python3 \
-    # python3-pip \
-    # cargo \
+# Clean up apt
+RUN apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+
+# Install neovim
+RUN INSTALL_PREFIX="/usr/local" bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/rolling/utils/installer/install-neovim-from-release)
 
 # Install LunarVim 
-# RUN LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) --no-install-dependencies -y
+RUN INSTALL_PREFIX="/usr/local" LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) --no-install-dependencies -y
 # RUN LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.2/neovim-0.8/utils/installer/install.sh) --no-install-dependencies -y
+
+# Update PATH
+# ENV PATH="${PATH}:${HOME}/.local/bin"
