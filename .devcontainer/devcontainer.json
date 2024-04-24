@@ -2,7 +2,7 @@
   "service": "devcontainer",
   "dockerComposeFile": "docker-compose.yml",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-  "postCreateCommand": "./post-create.sh",
+  "postCreateCommand": ".devcontainer/post-create.sh",
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {},
     "ghcr.io/devcontainers/features/node:1": {},
