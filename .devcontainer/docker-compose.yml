@@ -27,4 +27,4 @@ services:
     image: kennycallado/q-api-super:latest
     pull_policy: "always"
     environment:
-      DB_HOST: 'localhost:8000'
+      DB_HOST: 'db:8000'
