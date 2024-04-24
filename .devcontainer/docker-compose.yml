@@ -9,6 +9,23 @@ services:
     command: sleep infinity
 
   db:
-    extends:
-      file: ../docker-compose.yml
-      service: db
+    container_name: surrealdb
+    image: surrealdb/surrealdb:v1.4.2
+    restart: unless-stopped
+    command: 
+      - start
+      - memory
+      - -A
+      - --auth
+      - --no-banner
+      # - --log=trace
+      # - --log=info
+      - --user=root
+      - --pass=root
+      - --bind=0.0.0.0:8000
+
+  super:
+    image: kennycallado/q-api-super:latest
+    pull_policy: "always"
+    environment:
+      DB_HOST: 'surrealdb:8000'
