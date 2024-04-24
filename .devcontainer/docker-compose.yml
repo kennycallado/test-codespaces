@@ -9,7 +9,7 @@ services:
     command: sleep infinity
 
   db:
-    image: surrealdb/surrealdb:v1.3.1
+    image: surrealdb/surrealdb:v1.4.2
     restart: unless-stopped
     container_name: surrealdb
     command: 
