@@ -59,5 +59,3 @@ RUN apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 # RUN INSTALL_PREFIX="/usr/local" LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) --no-install-dependencies -y
 
 # RUN LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.2/neovim-0.8/utils/installer/install.sh) --no-install-dependencies -y
-
-EXPOSE 8000

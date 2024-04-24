@@ -1,11 +1,13 @@
 #! /usr/bin/env bash
 
-mkdir -p "${HOME}/.local/bin"
-PATH="${PATH}:${HOME}/.local/bin"
+# mkdir -p "${HOME}/.local/bin"
+# PATH="${PATH}:${HOME}/.local/bin"
+
+echo "hola"
 
 # bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/rolling/utils/installer/install-neovim-from-release)
 # LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) --no-install-dependencies -y
 
 # ln -sf $PWD/.devcontainer/editor.lua $HOME/.config/lvim/config.lua && set +x
 
-exit 0
+# exit 0
