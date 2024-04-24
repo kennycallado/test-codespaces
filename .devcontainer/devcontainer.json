@@ -3,11 +3,11 @@
   "dockerComposeFile": "docker-compose.yml",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "postCreateCommand": ".devcontainer/post-create.sh",
-  "forwardPorts": ["db:8000", "auth:9000", "app:80"],
+  "forwardPorts": [8000, 9000, 80],
   "portsAttributes": {
-    "db:8000": { "label": "database" },
-    "auth:9000": { "label": "auth" },
-    "app:80": { "label": "app" }
+    "8000": { "label": "database" },
+    "9000": { "label": "auth" },
+    "80": { "label": "app" }
   },
   "features": {
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {

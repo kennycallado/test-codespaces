@@ -8,6 +8,7 @@ services:
 
   app:
     image: kennycallado/q-app-php:latest
+    network_mode: service:db
     environment:
       ENVIRONMENT: development
       DATABASE_URL: http://db/sql
