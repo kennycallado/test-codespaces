@@ -24,8 +24,9 @@ services:
       - --bind=0.0.0.0:8000
 
   super:
-    container_name: super
     image: kennycallado/q-api-super:latest
+    restart: unless-stopped
     pull_policy: "always"
+    depends_on: db
     environment:
       DB_HOST: db:8000
