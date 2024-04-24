@@ -46,6 +46,10 @@
 - Doesn't seem updated
   - [](https://notes.alexkehayias.com/running-docker-compose-in-codespaces/)
   - [](https://notes.alexkehayias.com/github-codespaces-is-too-slow-and-expensive-to-replace-local-development/)
-- []()
-- []()
+- [](https://containers.dev/guide/dockerfile)
+- [](https://hub.docker.com/_/microsoft-vscode-devcontainers)
+- [images](https://github.com/devcontainers/images/tree/main/src)
+- [features](https://github.com/devcontainers/features/tree/main/src)
+- [sshd](https://github.com/devcontainers/features/blob/main/src/sshd/install.sh)
+- [](https://docs.github.com/en/codespaces/developing-in-a-codespace/rebuilding-the-container-in-a-codespace)
 - []()
