@@ -1,14 +1,8 @@
 {
   "service": "devcontainer",
-  "dockerComposeFile": "docker-compose.yml",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-  "forwardPorts": [8000, 9000, 80],
-  "portsAttributes": {
-    "8000": { "label": "database" },
-    "9000": { "label": "auth" },
-    "80": { "label": "app" }
-  },
-  "postCreateCommand": ".devcontainer/post-create.sh",
+  "dockerComposeFile": "compose.yml",
+
   "features": {
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
         "installDockerBuildx": false
@@ -16,10 +10,23 @@
     "ghcr.io/devcontainers/features/sshd:1": {},
     "ghcr.io/devcontainers/features/nix:1": {}
   },
-"customizations": {
+
+  "onCreateCommand": "nix-shell --command 'echo Nix dev environment done!' --experimental-features 'nix-command flakes'",
+  "postCreateCommand": ".devcontainer/post-create.sh",
+
+  "forwardPorts": [80, 9000, 8000],
+  "portsAttributes": {
+    "80": { "label": "app" },
+    "9000": { "label": "auth" },
+    "8000": { "label": "database" }
+  },
+
+  "customizations": {
     "vscode": {
       "extensions": [
-        "surrealdb.surrealql"
+        "arrterian.nix-env-selector",
+        "jnoortheen.nix-ide",
+        "GitHub.copilot"
       ]
     },
   },
