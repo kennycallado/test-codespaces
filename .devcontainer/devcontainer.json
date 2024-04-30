@@ -2,20 +2,20 @@
   "service": "devcontainer",
   "dockerComposeFile": "docker-compose.yml",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-  "postCreateCommand": ".devcontainer/post-create.sh",
   "forwardPorts": [8000, 9000, 80],
   "portsAttributes": {
     "8000": { "label": "database" },
     "9000": { "label": "auth" },
     "80": { "label": "app" }
   },
+  "onCreateCommand": "nix-shell --command 'echo done building nix dev environment'",
+  "postCreateCommand": ".devcontainer/post-create.sh",
   "features": {
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
         "installDockerBuildx": false
     },
     "ghcr.io/devcontainers/features/sshd:1": {},
-    "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/devcontainers/features/php:1": {}
+    "ghcr.io/devcontainers/features/nix:1": {}
   },
 "customizations": {
     "vscode": {
