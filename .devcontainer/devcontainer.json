@@ -8,7 +8,6 @@
     "9000": { "label": "auth" },
     "80": { "label": "app" }
   },
-  "onCreateCommand": "nix-shell --command 'echo done building nix dev environment'",
   "postCreateCommand": ".devcontainer/post-create.sh",
   "features": {
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
